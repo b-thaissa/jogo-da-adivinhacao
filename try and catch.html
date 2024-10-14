@@ -12,12 +12,12 @@
         async function fazerDownload() {
             return new Promise(function (resolve, reject) {
                 setTimeout(function () {
-                    const sucesso = true;
+                    const sucesso = false;
 
                     if (sucesso) {
                         resolve("Download concluído com sucesso!");
                     } else {
-                        reject("Falha no download.");
+                        reject("Falha.");
                     }
                 }, 2000);
 
