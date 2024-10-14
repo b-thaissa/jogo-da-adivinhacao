@@ -7,26 +7,21 @@
 </head>
 <body>
     <script>
-        function verificarProdutoDisponivel() {
-            return new Promise(function (resolve, reject) {
-                var produtoDisponivel = false; 
-
-                setTimeout (function () {
-                    if (produtoDisponivel) {
-                        resolve("Produto está disponivel!");
-                    } else {
-                        reject("Produto não disponivel!");
-                    }
-                }, 1000);
-            });  
+        function dividir (a, b) {
+            try {
+                if (b === 0) {
+                    throw new Error("Divisão por zero não é permitida.");
+                
+                } 
+                return a / b;
+            } catch (erro) {
+                console.error("Erro:", erro.message);
+            
+            }
         }
 
-        verificarProdutoDisponivel().then(function (mensagem) { 
-            console.log(mensagem);
-        }).catch(function (erro) {
-            console.error(erro);
-        });
-
+        console.log(dividir(40, 2));
+        console.log(dividir(44, 0));
     </script>
 </body>
 </html>
