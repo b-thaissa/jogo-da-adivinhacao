@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROMISE</title>
+</head>
+<body>
+    <script>
+        function verificarProdutoDisponivel() {
+            return new Promise(function (resolve, reject) {
+                var produtoDisponivel = false; 
+
+                setTimeout (function () {
+                    if (produtoDisponivel) {
+                        resolve("Produto está disponivel!");
+                    } else {
+                        reject("Produto não disponivel!");
+                    }
+                }, 1000);
+            });  
+        }
+
+        verificarProdutoDisponivel().then(function (mensagem) { 
+            console.log(mensagem);
+        }).catch(function (erro) {
+            console.error(erro);
+        });
+
+    </script>
+</body>
+</html>
